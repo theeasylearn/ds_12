@@ -1,0 +1,129 @@
+process
+--------------------------------------------
+
+1) write a program to convert days into hours 
+2) write a program to convert month into days 
+3) write a program to convert gram into kg 
+4) write a program to convert km into miles 
+
+5) write a program to findout & display area of rectangle 
+6) write a program to findout & display area of circle
+7) write a program to findout & display area of Triangle
+8) write a program to findout & display area of Sphere 
+
+9) write a program to convert grams into kilograms and remaining grams 
+10)write a program to convert inches into foot and remaining inches 
+
+simple if
+------------------------
+1) write a program to findout which person is taller in 2 person. 
+2) write a program to findout whether user can purchase pan or not from available money and price of the pen. 
+
+if else 
+---------------------------------
+1) write a program to find out whether given year is millennium year or not. using if else decision making statements.
+
+2) write a program to find out elder brother from given two brother's age. 
+
+
+3) write a program to find out which is cheaper approach to buy IPhone 17 pro max.  consider use is going usa should he buy iphone from usa or from india. 
+
+4) write a program to decide which is cheaper approach to go from ahmedabad to delhi. by car or by train. consider person has his own petrol car  and he prefer to travel by 1st class train 
+
+nested decision making statements
+---------------------------------------
+1) write a program to findout heaviest person from 3 person given weight
+2) write a program to findout most young person from 4 person given age
+
+
+loop 
+---------------------
+1)   100  95  90  85  80  75  70  65  60  ..... 0
+2)   2  4   6   8   10  .... 200
+3)   1    8   27  64  .....    1000
+4)   0    1   1   2   3   5   8   13  .... 100
+
+write a program to make sum of all odd numbers between 1 to 100 & display it 
+write a program to count odd number and even numbers in given rate. display count of odd and even value 
+write a program to findout factorial of given number. 
+
+
+
+5) write a program to figure out whether given number  is composite number or not
+6) write a program to figure out whether given number  is perfect number or not
+7) write a program to figure out whether given number  is armstrong number or not
+8) write a program to figure out whether given number  is prime number or not
+
+for loop 
+------------------------
+1) write a program to count positive & negative number in numeric list 
+2) write a program to calculate sum and average of  values in list 
+
+3) write a program to count words in given string (hit count space)
+4) write a program to count digits in given string 
+5) write a program to count vowels, consonants, digits, words, and symbol in given list 
+
+6) write a program to display and count only that countries that ends with asia.
+7) write a program to display find square root of all the numbers in tuple 
+8) write a program to findout minimum and maximum mark from dictionary which has 6 subject name and marks. 
+
+9) write a program to count digits in given string.
+10) write a program to count words in given string. 
+11) write a program to count consonants in given string.
+
+nested loop 
+-----------
+
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+1
+0 1
+0 1 0
+1 0 1 0
+1 0 1 0 1
+
+1 2 3 4 5  
+1 2 3 4  
+1 2 3  
+1 2  
+1
+
+5 4 3 2 1
+5 4 3 2
+5 4 3
+5 4
+5
+
+
+    1
+   1 2
+  1 2 1
+ 1 2 1 2
+1 2 1 2 1    
+
+function 
+-----------------------------
+write a program to create function that convert & return given fahrenheit into celsius 
+write a program to create function that calculate and return simple interest of given amount rate and year
+
+write a program that return current Date (google search)
+write a program that return current Time (google search)
+
+write a program that will find and print maximum number from 2 numbers.
+ 
+write a program that will find and print maximum number from list, user will pass list as argument in function. 
+
+write a program that will calculate and display sum of even value into list. user will pass list as argument in function. 
+
+write a program to edit program no 54. ask user his zodiac sign. must be any one of 12 zodiac sign. and then as zodiac sign extract rashi bhavishya pand play it. 
+
+download a new image from specific site at every 1 hour and display it as wallpaper. python program should automatically start when user start PC. 
+
+
+Recursion
+---------------
+Write a program to calculate sum of Numbers from 1 to n
