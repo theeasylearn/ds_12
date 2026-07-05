@@ -14,6 +14,71 @@ process
 9) write a program to convert grams into kilograms and remaining grams 
 10)write a program to convert inches into foot and remaining inches 
 
+list
+-------------------
+1) create list and store all your favorite  movie name and display it 
+2) create list and store your all friends age and display it. 
+3) create list that store 5 different type of values and display it.
+
+4) create empty list cars like car = []
+    add new car maruti, tata, mahindra at the end 
+    add new car bmw at 0th position 
+    add new car mercedes at 1st position
+    merge car with another list scooters 
+    remove car from 0th position 
+    empty list scooters 
+    
+
+5) create numeric list that has 10 number in any order 
+        1) findout maximum value from it 
+        2) findout minimum value from it 
+
+
+6) create tuple which has 10 LLM ai names 
+    1) print 1st five ai 
+    2) print last five ai 
+    3) print 1 to 3 ai 
+
+dictionary 
+------------------------------------------------------
+
+1) Create Dictionary to store your college details like name, trust, principal, establishment year, address, city, courses etc 
+    print dictionary 
+    update city using update method 
+    add state using update methods 
+    display all keys using keys method 
+    display all values using values method 
+    remove state using pop method 
+    remove last item using pop item method 
+    copy dictionary using copy method 
+    remove all key value pair in original dictionary 
+    print original and copied dictionary 
+
+2)  create dictionary store student name and marks for maths, science, english, computer, drawing 
+    1) display dictionary 
+    2) display total of marks 
+    3) display average 
+
+set 
+1) create a python program to create 2 set. 
+    1 set has list of sports include in olympic 2016
+    2 set has list of sports include in olympic 2022
+
+    display both set 
+    findout unique sports in both set & display it 
+    findout common sports in both set & display it 
+    findout sports in olympic 2022 but not in 2016 & display it 
+
+operators
+-----------------------------------
+1) write a program to convert given grams into kilograms and remaining grams. 
+2) write a program to convert no of balls into hours and remaining ball in cricket.
+3) write a program to convert inches into foot and remaining inches 
+
+4) write a program to reverse 3 digit amount given by user 
+5) write a program to display 3 digit amount into words 
+
+
 simple if
 ------------------------
 1) write a program to findout which person is taller in 2 person. 
