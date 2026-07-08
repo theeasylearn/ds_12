@@ -58,6 +58,7 @@ dictionary
     1) display dictionary 
     2) display total of marks 
     3) display average 
+assume dictionary name is result 
 
 set 
 1) create a python program to create 2 set. 
