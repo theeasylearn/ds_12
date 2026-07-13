@@ -82,8 +82,11 @@ operators
 
 simple if
 ------------------------
-1) write a program to findout which person is taller in 2 person. 
+1) write a program to findout which person is shorter in 2 person from given height.
+
 2) write a program to findout whether user can purchase pan or not from available money and price of the pen. 
+
+3) write a program to findout given shape is portrait or landscape or square from given height and width 
 
 if else 
 ---------------------------------
