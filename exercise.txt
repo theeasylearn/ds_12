@@ -92,12 +92,10 @@ if else
 ---------------------------------
 1) write a program to find out whether given year is millennium year or not. using if else decision making statements.
 
-2) write a program to find out elder brother from given two brother's age. 
 
+2) write a program to find out which is cheaper approach to buy IPhone 17 pro max.  consider use is going usa should he buy iphone from usa or from india. 
 
-3) write a program to find out which is cheaper approach to buy IPhone 17 pro max.  consider use is going usa should he buy iphone from usa or from india. 
-
-4) write a program to decide which is cheaper approach to go from ahmedabad to delhi. by car or by train. consider person has his own petrol car  and he prefer to travel by 1st class train 
+3) write a program to decide which is cheaper approach to go from ahmedabad to delhi. by car or by train. consider person has his own petrol car  and he prefer to travel by 1st class train 
 
 nested decision making statements
 ---------------------------------------
