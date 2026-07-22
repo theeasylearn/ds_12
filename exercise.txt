@@ -110,9 +110,9 @@ loop
 3)   1    8   27  64  .....    1000
 4)   0    1   1   2   3   5   8   13  .... 100
 
-write a program to make sum of all odd numbers between 1 to 100 & display it 
-write a program to count odd number and even numbers in given rate. display count of odd and even value 
-write a program to findout factorial of given number. 
+5) write a program to make sum of all odd numbers between 1 to 100 & display it 
+6) write a program to count & display odd number and even numbers in given range. display count of odd and even value 
+7) write a program to calculate and display compound interest of given amount, rate, year 
 
 Write a program that takes a 5 subject marks from user. calculate total and average  and prints the grade using the following conditions:
 
