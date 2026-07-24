@@ -95,24 +95,7 @@ if else
 
 2) write a program to find out which is cheaper approach to buy IPhone 17 pro max.  consider use is going usa should he buy iphone from usa or from india. 
 
-3) write a program to decide which is cheaper approach to go from ahmedabad to delhi. by car or by train. consider person has his own petrol car  and he prefer to travel by 1st class train 
-
-nested decision making statements
----------------------------------------
-1) write a program to findout heaviest person from 3 person given weight
-2) write a program to findout most young person from 4 person given age
-
-
-loop 
----------------------
-1)   100  95  90  85  80  75  70  65  60  ..... 0
-2)   2  4   6   8   10  .... 200
-3)   1    8   27  64  .....    1000
-4)   0    1   1   2   3   5   8   13  .... 100
-
-5) write a program to make sum of all odd numbers between 1 to 100 & display it 
-6) write a program to count & display odd number and even numbers in given range. display count of odd and even value 
-7) write a program to calculate and display compound interest of given amount, rate, year 
+3) write a program to decide which is cheaper approach to go from ahmadabad to delhi. by car or by train. consider person has his own petrol car  and he prefer to travel by 1st class train 
 
 Write a program that takes a 5 subject marks from user. calculate total and average  and prints the grade using the following conditions:
 
@@ -135,10 +118,28 @@ do operation and display result as per user choice using switch statements.
     input : 4 output : this month has 30 days 
 
 
-5) write a program to figure out whether given number  is composite number or not
-6) write a program to figure out whether given number  is perfect number or not
-7) write a program to figure out whether given number  is armstrong number or not
-8) write a program to figure out whether given number  is prime number or not
+nested decision making statements
+---------------------------------------
+1) write a program to findout heaviest person from 3 person given weight
+2) write a program to findout most young person from 4 person given age
+
+
+loop 
+---------------------
+1)   100  95  90  85  80  75  70  65  60  ..... 0
+2)   2  4   6   8   10  .... 200
+3)   1    8   27  64  .....    1000
+4)   0    1   1   2   3   5   8   13  .... 100
+
+5) write a program to make sum of all odd numbers between 1 to 100 & display it 
+6) write a program to count & display odd number and even numbers in given range. display count of odd and even value 
+7) write a program to calculate and display compound interest of given amount, rate, year 
+
+
+8) write a program to figure out whether given number  is composite number or not
+9) write a program to figure out whether given number  is perfect number or not
+10) write a program to figure out whether given number  is armstrong number or not
+11) write a program to figure out whether given number  is prime number or not
 
 for loop 
 ------------------------
