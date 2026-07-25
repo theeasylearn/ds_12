@@ -144,8 +144,31 @@ loop
 for loop 
 ------------------------
 1) write a program to count positive & negative number in numeric list 
-2) write a program to calculate sum and average of  values in list 
-
+2) write a program to calculate sum and average of  values in tuples  
+3) write a program to findout which team has won the match from below data. also display margin of win 
+    India=  {
+        "Rohit Sharma": 9,
+        "Virat Kohli": 76,
+        "Rishabh Pant": 0,
+        "Suryakumar Yadav": 3,
+        "Axar Patel": 47,
+        "Shivam Dube": 27,
+        "Hardik Pandya": 5,
+        "Ravindra Jadeja": 2,
+    },
+    sa = {
+        "Reeza Hendricks": 4,
+        "Quinton de Kock": 39,
+        "Aiden Markram": 4,
+        "Tristan Stubbs": 31,
+        "Heinrich Klaasen": 52,
+        "David Miller": 21,
+        "Marco Jansen": 2,
+        "Keshav Maharaj": 2,
+        "Kagiso Rabada": 4,
+        "Anrich Nortje": 1,
+    }
+    
 3) write a program to count words in given string (hit count space)
 4) write a program to count digits in given string 
 5) write a program to count vowels, consonants, digits, words, and symbol in given list 
@@ -157,6 +180,9 @@ for loop
 9) write a program to count digits in given string.
 10) write a program to count words in given string. 
 11) write a program to count consonants in given string.
+
+12) write a program to print multiplication table of given number in reverse 
+13) write a program to print all the number divisible by 10 between 1 to 1000 without using decision making 
 
 nested loop 
 -----------
