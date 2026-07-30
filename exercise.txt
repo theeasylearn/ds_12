@@ -216,12 +216,30 @@ nested loop
    1 2
   1 2 1
  1 2 1 2
-1 2 1 2 1    
+1 2 1 2 1  
 
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
+
+1 0 1 0 1
+ 1 0 1 0 
+  1 0 1
+   0 1
+    1
+    
 function 
 -----------------------------
-write a program to create function that convert & return given fahrenheit into celsius 
-write a program to create function that calculate and return simple interest of given amount rate and year
+1) write a program to create function that convert & return given fahrenheit return is celsius value
+
+2) write a program to create function that calculate and return simple interest of given amount rate and year
+
+3) write a program to create function that returns cube of given number
+
+4) write a program to create function that returns factorial of given number 
+
 
 write a program that return current Date (google search)
 write a program that return current Time (google search)
