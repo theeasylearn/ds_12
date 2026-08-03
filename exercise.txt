@@ -240,6 +240,9 @@ function
 
 4) write a program to create function that returns factorial of given number 
 
+5) write a program to create function that return total inch of given meter, foot and inches where foot and inches are default argument.
+
+6) write a program to create function that return bytes inch of given mega bytes and kilobytes where kilobytes are default argument.
 
 write a program that return current Date (google search)
 write a program that return current Time (google search)
