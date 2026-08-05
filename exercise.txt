@@ -244,6 +244,13 @@ function
 
 6) write a program to create function that return bytes inch of given mega bytes and kilobytes where kilobytes are default argument.
 
+7) write a program to findout minimum number from all the numbers supplied in user defined function. 
+
+8) write a program to count and display all the odd and even numbers separately from all numbers supplied in user defined function. 
+output : odd count : 5, even count : 3
+
+9) write a program to count all countries whose name ends land like england, poland, netherland etc 
+
 write a program that return current Date (google search)
 write a program that return current Time (google search)
 
