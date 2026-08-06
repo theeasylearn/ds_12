@@ -251,20 +251,12 @@ output : odd count : 5, even count : 3
 
 9) write a program to count all countries whose name ends land like england, poland, netherland etc 
 
-write a program that return current Date (google search)
-write a program that return current Time (google search)
+10) write a program to create function that return maximum and minimum value from 3 given number.
 
-write a program that will find and print maximum number from 2 numbers.
- 
-write a program that will find and print maximum number from list, user will pass list as argument in function. 
-
-write a program that will calculate and display sum of even value into list. user will pass list as argument in function. 
-
-write a program to edit program no 54. ask user his zodiac sign. must be any one of 12 zodiac sign. and then as zodiac sign extract rashi bhavishya pand play it. 
-
-download a new image from specific site at every 1 hour and display it as wallpaper. python program should automatically start when user start PC. 
-
+11) write a program to create function that return square and cube and factorial of given number 
 
 Recursion
 ---------------
-Write a program to calculate sum of Numbers from 1 to n
+Write a program to convert decimal number into octal number 
+Write a program to convert decimal number into hexadecimal number 
+
