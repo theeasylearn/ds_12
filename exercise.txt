@@ -260,3 +260,11 @@ Recursion
 Write a program to convert decimal number into octal number 
 Write a program to convert decimal number into hexadecimal number 
 
+OOP 
+-----------------------
+Create class MyMath which has following methods 
+    addition()
+    subtraction()
+    multiplication()
+    division()
+each method will display only relevant message. 
