@@ -267,4 +267,15 @@ Create class MyMath which has following methods
     subtraction()
     multiplication()
     division()
-each method will display only relevant message. 
+each method will display only relevant message.
+
+Create class BMICalculator which has 
+    Weight and height as instance variable 
+    getBmi method which return BMI 
+
+Create class EMICalculator which has 
+    loan amount, rate, duration as instance variable 
+    getInstallmentAmount() method which return amount of installment 
+    getTotalAmount() method return total amount 
+
+
