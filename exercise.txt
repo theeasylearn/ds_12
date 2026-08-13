@@ -305,3 +305,31 @@ Create class meter which extends Foot class
 
 Create class KM which extends meter class 
     and it getkm() method which return kilometer  
+
+Create class Animal which has below method 
+        hunt()
+        run()
+        reproduce()
+    Animal class will be extended in Cat class 
+        which has below method 
+        Jump()
+        Lick()
+    Animal class will be extended in Aves class 
+        which has below method 
+        fly()
+        sing()
+
+Create class Animal which has below method 
+        run()
+        eat()
+
+Create class bird which has below method 
+        fly()
+        sing()
+
+Create class Dragon which has below method it should extends both Animal and bird class 
+        run 
+        eat 
+        fly()
+        sing()
+    
