@@ -21,7 +21,15 @@ class Student(Human):
         #calling own class method 
         self.read()
         self.write()
-
+class Teacher(Student):
+    def teach(self):
+        print("I can teach")
+    def doughs(self):
+        print("I can help to solve doughs")
+    def whatICanDo(self):
+        super().whatICanDo()
+        self.teach()
+        self.doughs()
 class Developer(Student):
     def code(self):
         print("I can write code in python")
@@ -36,3 +44,6 @@ class Developer(Student):
 #create object of developer class 
 d1 = Developer() 
 d1.whatICanDo() #calling whatICanDo method of Developer 
+
+t1 = Teacher()
+t1.whatICanDo()
