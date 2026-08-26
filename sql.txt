@@ -1,0 +1,32 @@
+How to insert new row into table?
+to insert new row into table, we use insert into sql command.  there are 2 ways to insert new row. 
+
+1st way 
+syntax 
+insert into <tablename> values ([value-1][value-2],[value-n])
+
+Example 
+insert into category values (0,'Mixture','mixture.jpg',1,0,CURRENT_TIMESTAMP)
+
+insert into category values (0,'pen drives','pendrive.jpg',1,0,CURRENT_TIMESTAMP)
+
+2nd way 
+syntax 
+insert into <tablename> (field-1,field-2,field-n) values ([value-1][value-2],[value-n])
+
+example 
+insert into category (title,photo) values ('sound bar','sound.jpg');
+insert into category (title,photo) values ('microwave oven','microwave.jpg');
+
+How to insert delete row from table?
+
+syntax 
+delete from <tablename> [<condition>]
+example 
+
+delete all row from category table 
+delete from category;
+
+delete specific row 
+delete category whose title is sound bar 
+delete from category where title = 'sound bar'
