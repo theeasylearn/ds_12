@@ -30,3 +30,49 @@ delete from category;
 delete specific row 
 delete category whose title is sound bar 
 delete from category where title = 'sound bar'
+
+delete product whose price is above 40000 rs 
+----------------------------------------------
+delete from products where price>40000
+
+delete product whose price is in range of 10000 to 20000 
+--------------------------------------------------------
+delete from products where price>10000 and price<20000
+
+delete product whose category is either Furniture or Audio 
+--------------------------------------------------------
+delete from products where category='furniture' or category='audio'
+
+delete all row from products table 
+-------------------------
+delete from products 
+
+
+How to update existing row in table?
+-------------------------------------
+to update existing row in table, we use update sql command 
+syntax 
+update <tablename> set field=value, field-2=value-2, field-n = value-n [where <condition>]
+
+Note, 
+if we do not where clause in update sql statement, it will update all rows table 
+
+example
+-------------------------------
+update all product set weight to 0 grams 
+update products set weight=0
+
+update price of all product by 1 rupees 
+update products set price = price + 1
+
+update product p001, set name to usb mouse, description to usb 3.0 mouse, price to 200 rs.
+update products set name='usb mouse', description = 'usb 3.0 mouse', price = 200 where product_code='p001'
+
+update product table, increase price by 50 of those product whose price is between 2000 to 3000 rupees. 
+update products set price=price+50 where price>2000 and price<3000
+
+update product set stock to 10 of those product whose id is below 10
+update products set stock = 10 where id<10
+
+update product set weight to 100 grams of those product which is manufactured in january month 
+update products set weight = 100 where manufacture_date >= '2026-01-01' and manufacture_date<='2026-01-31'
