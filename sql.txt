@@ -125,37 +125,60 @@ select customerName, city, state, country from customers limit 100,100
 
 Display data in specific order (ascending / descending order)
 
-
 6 Select customerNumber, customerName, city, state, country of all customers from customers table in name wise ascending order
+
+select customerNumber,customerName,city,state,country from customers order by customerName limit 0,50
 
 7 Select customerNumber, customerName, city, state, country of all customers from customers table country wise, then state wise and then city wise in ascending order
 
+select customerNumber,customerName,city, state, country from customers order by country, state, city 
 
-8 Select customerNumber, customerName, city, state, country, creditLimit of all customers from customers table creditLimit wise in descending order
+
+8 Select customerNumber, customerName, city, state, country, creditLimit of all customers from customers table display them creditLimit wise in descending order
+
+select customerNumber, customerName, city, state, country, creditLimit from customers order by creditLimit desc 
 
 8.2 fetch Namewise 1st 50 customers customerNumber,customerName
+select customerNumber,customerName from customers order by customerName limit 0,50
 
 Filter data (fetch data as per conditions)
+-----------------------------------------------------
 
-9 Select customerNumber, customerName, city, state, country, creditLimit of those customers whose country is USA
-
+9 Select customerNumber, customerName, city, state, country, creditLimit of those customers whose country is USA.
+select customerNumber, customerName, city, state, country, creditLimit from customers where country = 'usa'
 
 10 Select customerNumber, customerName, city, state, country, creditLimit of those customers whose creditLimit is below 500000, display them creditLimit wise ascending order
 
+select customerNumber, customerName, city, state, country, creditLimit from customers where creditLimit<500000 order by creditLimit 
+
 11 Select customerNumber, customerName, country of those customers whose country is USA or France
+Select customerNumber, customerName, country from customers where country = 'usa' or country = 'france'
+
 
 12 Select customerNumber, customerName, city, state, country, creditLimit of those customers whose country is USA or France or Australia or Japan or Italy
 
+Select customerNumber, customerName, country from customers where country = 'usa' or country = 'france' or country='Australia' or country='japan' or country='italy'
+
 in operator should be used only when we need to check many different condition on same field using only = operator
 
+Select customerNumber, customerName, country from customers where country in ('usa','france','Australia','japan','italy')
+
 13 Select customerNumber, customerName, creditLimit of those customers whose creditLimit is between 100000 to 999999
+Select customerNumber, customerName, creditLimit from customers where creditLimit>=100000 and creditLimit<=999999
+
                                             OR
+Select customerNumber, customerName, creditLimit from customers where creditLimit between 100000 and 500000
 
 14 Select customerNumber, customerName, city, state, country, creditLimit from customers where country is USA and state is CA and city is San Francisco
 
+Select customerNumber, customerName, city, state, country, creditLimit from customers where country = 'usa' and state = 'CA' or city = 'San Francisco'
+
 15 Select customerNumber, customerName, city, state, country, creditLimit from customers where country is USA and state is CA and city is Delhi
 
+Select customerNumber, customerName, city, state, country, creditLimit from customers where country = 'usa' and state = 'CA' and city = 'Delhi'
+
 16 Select unique country from customers table and display it in ascending order
+select distinct(country) from customers
 
 17 Select customerNumber, customerName, city, state, country, creditLimit of those customers who are not from USA, France, Australia, Japan & Italy and display them in ascending order of country name
 

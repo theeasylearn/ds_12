@@ -55,6 +55,7 @@
 39. Select all unique countries from the customers table.
 40. Select all unique cities from customers and sort them A to Z.
 41. Select all unique countries and sort them in descending order.
+
 42. Count how many customers are there in total.
 43. Find the highest creditLimit in the customers table.
 44. Find the lowest creditLimit value among all customers.
