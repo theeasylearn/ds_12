@@ -226,7 +226,6 @@ Aggregate function
 ------------------------------
 Function that works upon numeric field and returns single value is called Aggregate function.
 
-
 sum(field)
     sum function returns sum of given numeric field.
 avg(field)
@@ -239,45 +238,57 @@ count()
     count function count of rows in table (how many rows table has)
 
 18 Fetch total payment amount from payments
+select sum(amount) as total  from payments
 
 19 Fetch minimum and maximum amount from payments
+select min(amount), max(amount) from payments 
 
 20 Fetch average payment amount from payments
+select avg(amount) as average_amount from payments 
+
 
 21 Count number of customers
+select count(*) as total_customers from customers 
 
+it is possible to use Aggregate function with where clause 
 
-22 Fetch count of customers who are from USA
+22 Fetch count of customers who are from USA.
+select count(*) from customers where country='USA'
 
 23 Fetch total payment amount of customers whose customerNumber is 112
+SELECT sum(amount) from payments where customerNumber = 112
 
 24 Fetch total payment amount received in year 2004
-
-or
+select sum(amount)  from payments where paymentDate>='2004-01-01' and paymentDate<='2004-12-31'
 
 25 Fetch average payment amount of customer whose customerNumber is 114
+select round(avg(amount),2) from payments where customerNumber=114;
 
 ------------------------------------------
 Group By
 
 Group by clause is used to calculate result for Aggregate function based upon repetitive value of specific field.
 
+
 26 Fetch total payments amount paid by each and every customer
+select sum(amount) from payments group by customerNumber
 
 27 Fetch number of payments received by each and every customer
-
+select count(*),customerNumber from payments group by customerNumber
 
 28 Fetch maximum payment amount received by each and every customer
-
+select max(amount),customerNumber from payments group by customerNumber
 
 29 Fetch number of customers from each country
-
+select count(*),country from customers group by country
 
 30 Fetch number of orders given by each and every customers and display them in descending order
-
+select count(*),customerNumber from orders group by customerNumber order by customerNumber desc 
 31 Fetch number of employees in each office
+select count(*),officecode from employees group by officecode 
 
 32 Fetch top 5 customer's no number order wise
+select count(*),customerNumber from orders group by customerNumber order by count(*) desc  limit 0,5
 
 Having clause
 
