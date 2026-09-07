@@ -271,7 +271,7 @@ Group by clause is used to calculate result for Aggregate function based upon re
 
 
 26 Fetch total payments amount paid by each and every customer
-select sum(amount) from payments group by customerNumber
+select customerNumber,sum(amount) from payments group by customerNumber
 
 27 Fetch number of payments received by each and every customer
 select count(*),customerNumber from payments group by customerNumber
@@ -291,29 +291,55 @@ select count(*),officecode from employees group by officecode
 select count(*),customerNumber from orders group by customerNumber order by count(*) desc  limit 0,5
 
 Having clause
-
+------------------------------
 Having clause is used only when we need to give condition on value returned by group by clause.
 
 32 Fetch customer wise total payment amount of those customers whose total payment amount is above 1 lakh & display it total payment wise descending order
-
+select customerNumber,sum(amount) from payments group by customerNumber having sum(amount)>100000 order by sum(amount) desc 
 
 33 Fetch customer wise number of payments made of those customers who have made more than 3 payments & display it in number of payments wise descending order
 
-34 Fetch country name and number of customers from each country where there are more than 5 customers
+select count(*), customerNumber from payments group by customerNumber having count(*) order by count(*) desc 
+
+
+34 Fetch country name and number of customers from each country where there are more than 5 customers.
+select country,count(*) from customers group by country having count(*)>5
 
 
 Joins
-----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
 Join operation basically  makes join between any numbers of tables and display data as single virtual table.
 to join multiple tables, there must be one common field between tables to be used in join.
 
 what is common field?
 common field is field in two table which has same data type and same set of values (domain values)
 
-types of
+types of JOIN 
+------------------------------
+Ram 
+    A, B, C, D, E, 
 
+Shyam 
+    C, D, E, F, G 
+
+Common value (inner join)
+C, D, E
+
+Left join 
+------------------------------
+Ram 
+     A, B, C, D, E,
+Shyam 
+           C, D, E,
+
+Left join 
+------------------------------
+Ram 
+    C, D, E,
+Shyam 
+    C, D, E, F, G 
 INNER JOIN / Equi join
-Inner join fetches only matching rows from all the tables using in join. here  matching rows means common field in both table has same value in both table
+Inner join fetches only matching rows from all the tables used in join. here  matching rows means common field in both table has same value in both table.
 
 LEFT JOIN
 Left join fetches all rows from left side table but only matching rows from right side table.  here  matching rows means common field in both table has same value in both table
@@ -325,12 +351,12 @@ CROSS JOIN
 FETCH DATA FROM BOTH TABLE WITHOUT ANY CONDITION
 
 SELF JOIN
-35  Fetch customerNumber, customerName, city, state, country and orderNumber, orderDate, status of order, display it customerNumber wise ascending order
+when table make join operation with it self, it is called self join 
 
-    1) select customerNumber,customerName,city,state,country from customers c
-    2) select orderNumber,orderDate,status from orders o
+--------------------------------------------------------------------------------------
+35 Fetch customerNumber, customerName, city, state, country and orderNumber, orderDate, status of order, display it customerNumber wise ascending order
 
-    3) select c.customerNumber,customerName,city,state,country,orderNumber,orderDate,status  from customers c, orders o where c.customerNumber = o.customerNumber order by c.customerNumber
+   
 
 36 Fetch customerNumber, customerName, city, state, country and paymentDate, amount of each and every customer and display them payment date wise (old date come first and new date come last)
     1) select customerNumber,customerName,city,state,country from customers c
