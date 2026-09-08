@@ -356,28 +356,41 @@ when table make join operation with it self, it is called self join
 --------------------------------------------------------------------------------------
 35 Fetch customerNumber, customerName, city, state, country and orderNumber, orderDate, status of order, display it customerNumber wise ascending order
 
-   
+   select customerNumber,customerName,city,state, country from customers 
+   select orderNumber,orderDate,status from orders 
+
+   let us join them 
+   ---------------------
+   select c.customerNumber,customerName,city,state, country, orderNumber,orderDate,status from customers c, orders o where c.customerNumber = o.customerNumber order by c.customerNumber  
 
 36 Fetch customerNumber, customerName, city, state, country and paymentDate, amount of each and every customer and display them payment date wise (old date come first and new date come last)
-    1) select customerNumber,customerName,city,state,country from customers c
-    2) select date_format(paymentDate,'%d-%m-%Y') as paymentDate,amount from payments p
+    select customerNumber,customerName,city, state, country from customers 
+    select paymentDate,amount from payments 
 
-    3) select c.customerNumber,customerName,city,state,country, date_format(paymentDate,'%d-%m-%Y') as pd ,amount from customers c, payments p where c.customerNumber = p.customerNumber order by paymentdate asc
+    let us join them 
+    ------------------------
+    select c.customerNumber,customerName,city, state, country,paymentDate,amount from customers c, payments p where c.customerNumber = p.customerNumber order by paymentDate
 
 37 Fetch productCode, productName, quantityOrdered, priceEach, orderNumber, orderDate, status of each and every order
-    1) select productCode, productName from products p
-    2) select orderNumber,quantityOrdered,priceEach from orderdetails od
-    3) select orderdate,status from orders o
+    
+    select productCode, productName from products 
+    select quantityOrdered, priceEach, orderNumber from orderdetails
+    select orderDate,status from orders
 
-    1)  select productCode, productName, orderNumber,quantityOrdered,priceEach, orderdate,status from products p,  orderdetails od, orders o where p.productCode = od.productCode and o.orderNumber = od.orderNumber
+    let us join them 
+    ------------------------------------------------------------------
+    select p.productCode, productName,quantityOrdered, priceEach, o.orderNumber,orderDate,status from products p, orderdetails od, orders o where p.productCode = od.productCode and o.orderNumber = od.orderNumber
 
-38) fetch each order's orderNumber,customerNumber and total order value
+38) fetch each order's orderNumber,customerNumber,customerName and total order value
 SQL
-    1) select orderNumber,customerNumber from orders o
-    2) select orderNumber,sum(priceEach*quantityOrdered) as order_amount from orderdetails od group by orderNumber;
+    select orderNumber,sum(priceEach*quantityOrdered) from orderdetails group by orderNumber
+    select customerNumber,customerName from customers
 
+    let js join them 
+    -----------------------------
+    select o.orderNumber,sum(priceEach*quantityOrdered),c.customerNumber,customerName from orderdetails od, customers c, orders o  where od.orderNumber = o.orderNumber and o.customerNumber = c.customerNumber  group by o.orderNumber  order by c.customerNumber
 
-    3) select o.orderNumber,customerNumber ,sum(priceEach*quantityOrdered) as order_amount from orders o, orderdetails od where o.orderNumber=od.orderNumber group by o.orderNumber;
+    
 
 LEFT JOIN
 -------------
