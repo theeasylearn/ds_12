@@ -398,17 +398,23 @@ Left join fetches all rows from left side table but only matching rows from righ
 
 39) fetch customerNumber,customerName who have never given any order
 
-    1) SELECT customerNumber, customerName from customers c
-    2) select orderNumber from orders o
+    1) select  customerNumber,customerName from customers 
+    2) select orderNumber from orders 
 
+let us join them 
+-------------------------------------------------------------
+select  c.customerNumber,customerName,orderNumber from customers c left join orders o on c.customerNumber = o.customerNumber where orderNumber is null 
 
 
 40) Fetch those productCode and ProductName of those product which is never ordered
+select productCode, productName from products p 
+select orderNumber from orderdetails od 
+let us join them 
+-------------------------------------------------------------
+    select p.productCode, productName,orderNumber from products p left join orderdetails od on p.productcode = od.productCode where orderNumber is null 
 
-    1) select productCode, productName from products p
-    2) select orderNumber from orderdetails od
 
--------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 RIGHT JOIN
 
 right join fetches all rows from right side table but only matching rows from left side table.  here  matching rows means common field in both table has same value in both table
