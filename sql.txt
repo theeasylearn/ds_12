@@ -420,45 +420,47 @@ RIGHT JOIN
 right join fetches all rows from right side table but only matching rows from left side table.  here  matching rows means common field in both table has same value in both table
 
 41) fetch those customerNumber and customerName who have never given any payments
-SQL
-    1) SELECT customerNumber, customerName from customers c
-    2) SELECT AMOUNT FROM payments p
 
+    select customerNumber,customerName from customers
+    select amount from payments 
 
+    select amount,c.customerNumber,customerName from payments p right join customers c on c.customerNumber = p.customerNumber where amount is null 
 
 42) fetch those office Detail from office table in which no employees are working
 
-    1) select * from offices o
-    2) select officecode from employees e
+    select * from offices 
+    select employeeNumber from employees 
 
+    select o.* ,employeeNumber from employees e right join offices o on o.officecode = e.officecode where employeeNumber is null 
 
 CROSS JOIN
     FETCH DATA FROM BOTH TABLE WITHOUT ANY CONDITION
 
-fetch possibilities where each and every employees can work in each office
----------------------------------------
-    1) select * from offices o
-    2) select * from employees e
+fetch possibilities for working in  each and every office for all employees
+----------------------------------------------------------------------------
+select * from employees e  
+select * from offices o
 
+select e.*,o.* from offices o, employees e
 
 some advance examples
 -----------------------------------------------------
 43) findout actual customer's number and name  who have not given payments
 
 SQL
-    1) findout customers who have have given orders
+    1st fetch those customerNumber who has given order 
+    select DISTINCT customerNumber from orders o; 
 
-    2) findout customerNumber and customerName from customers
+    2nd fetch those customerNumber who has given payment 
+    select distinct customerNumber from payments;
 
-    3) findout customerNumber who have made at least one payments
+    let us join them 
+    ---------------------------------------------------------------------------------------------------------
+    select DISTINCT o.customerNumber,p.customerNumber from orders o left join payment p select DISTINCT o.customerNumber,p.customerNumber from orders o left join payments p on o.customerNumber = p.customerNumber where p.customerNumber is null;
 
-    fetch customers details who has given orders
+    select DISTINCT o.customerNumber,(select customerName from customers c where c.customerNumber = o.customerNumber),p.customerNumber from orders o left join payments p on o.customerNumber = p.customerNumber where p.customerNumber is null;
 
 
 
-    fetch customerNumber,customerName, pending amount
 
-    1) fetch orderNumber and order amount
-
-    2) fetch customerNumber,customerName, orderNumber
-
+    
