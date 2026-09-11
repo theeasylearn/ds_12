@@ -86,3 +86,57 @@
 59. Display productCode, productName, MSRP from products and quantityOrdered, priceEach from orderdetails. Include only order details where quantityOrdered is greater than 50. Sort by quantityOrdered descending.
 
 60. Select customerName, city, state, country from customers, orderNumber, orderDate, requiredDate from orders. Show only orders that were required in the year 2003. Sort by customerName.
+
+-----------------------------------------------------------------------------------------
+sub query
+-------------------------------------------------------------------------
+when we use one select statement inside another select statement is called sub query. in such sql statement 1ST sql statement is called outer query and 2nd select statement is called inner query. 
+
+61 findout customerNumber, customerName and city state and country of those customer who are customers from the customerName ankit's country 
+
+    1st findout country name of customers ankit 
+    select country from customers where customerName = "Ankit"
+
+    2nd findout customerNumber, customerName and city state and country of those customers who are from france country 
+    select customerNumber,customerName,city, state, country from customers where country =
+'france'
+
+merge them 
+     select customerNumber,customerName,city, state, country from customers where country =
+    (select country from customers where customerName = "Ankit") and customerName!='ankit';
+
+62. findout employee detail is not working with employee whose name is monika. 
+
+    1st findout officeCode of employee monika 
+    select officeCode from employees where firstName='monika'
+
+    then findout employee whose officeCode is 1 
+    select * from employees where officeCode = 1
+
+    merge
+    select * from employees where officeCode = (select officeCode from employees where firstName='monika') and firstName!='monika';
+
+63. findout all the orderNumber,productCode,quantityOrdered,priceEach of those ordered  which has been ordered with productCode S18_1749
+
+    1st fetch orderNumber where productCode =  S18_1749
+    select orderNumber from orderdetails where productCode='S18_1749'
+
+    2nd 
+        select orderNumber,productCode,quantityOrdered,priceEach from orderdetails where productCode in (10100,10110,10124,10138)
+
+    merge them 
+        select orderNumber,productCode,quantityOrdered,priceEach from orderdetails where orderNumber in (select orderNumber from orderdetails where productCode='S18_1749') and productCode!='S18_1749';
+
+
+64) findout payment detail where amount is below average payment amount 
+
+    1st findout average payment amount 
+    select avg(amount) from payments 
+
+    select * from payments where amount < 32376
+
+    merge 
+    select * from payments where amount < (select avg(amount) from payments)
+-----------------------------------------------------------------------------------
+
+
