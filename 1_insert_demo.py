@@ -8,4 +8,3 @@ values = [name,age,weight]
 mycursor.execute(sql,values)
 c.database.commit()
 print(mycursor.rowcount, "row inserted....")
-
