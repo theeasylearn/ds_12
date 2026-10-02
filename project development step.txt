@@ -1,0 +1,7 @@
+1) Develop Main menu for modules 
+2) put main menu inside loop 
+3) Develop Bill choice menu 
+4) put Bill choice menu into loop
+5) Develop product choice menu 
+6) put product choice menu into loop 
+7)

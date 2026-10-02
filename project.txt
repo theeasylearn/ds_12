@@ -1,15 +1,16 @@
 Console based Billing Application using python 
 -------------------------------------------------
 features
-    1) Product management
+    1) Product management Module.
         Add, Edit, Delete, View, Search Product 
-    2) Bill management 
+    2) Bill management Module.
         Add Item, Delete Items, View items, 
         Generate Bill, Search Bill (name wise) 
         send bill as pdf on email address (exercise)
-    3) Reports 
+    3) Reports Module
         Sales report (pdf/excel)
             Duration 
             Item Wise 
             Stock
+
         
