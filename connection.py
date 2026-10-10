@@ -20,9 +20,9 @@ def runSQL(sql,values=None):
 
 #function to select statement
 def fetchData(sql,values=None):
-    mycursor = database.cursor()
+    mycursor = database.cursor(dictionary=True)
     if values==None:
         mycursor.execute(sql)
     else:
         mycursor.execute(sql,values)
-    return mycursor.fetchall()
+    return mycursor.fetchall() #return list of dictionary
