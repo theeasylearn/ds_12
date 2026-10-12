@@ -1,4 +1,13 @@
 import connection as c 
+def display_product():
+    sql = "select id,name,price,quantity from product where is_deleted=0 order by name"
+    products = c.fetchData(sql)
+    print(f"{'id':<5} {'':<5} {'name':<70} {'price':10} {'quantity':10}")
+    print("-"*100)
+    for index,row in enumerate(products):
+        print(f"{row['id']:5} {'':5} {row['name']:<64} {row['price']:10} {row['quantity']:10}")
+        if (index+1)%10 == 0:
+            key = input("Press any key to continue")
 while True: 
     print("Press 1 for Bill Management")
     print("Press 2 for Product Management")
@@ -58,15 +67,30 @@ while True:
                 print("let us edit product")
             elif product_choice == 3:
                 print("let us delete product")
+                #display all products 
+                display_product()
+                id = int(input("enter product id to delete product"))
+                sql = "update product set is_deleted=1 where id=%s"
+                values = [id]
+                success = c.runSQL(sql,values)
+                if success == 1:
+                    print("product has been deleted")
             elif product_choice == 4:
-                sql = "select id,name,price,quantity from product order by name"
-                products = c.fetchData(sql)
-                for index,row in enumerate(products):
-                    print(f"{row['id']:5} {'':5} {row['name']:<64} {row['price']:10} {row['quantity']:10}")
-                    if (index+1)%10 == 0:
-                        key = input("Press any key to continue")
+                display_product()
             elif product_choice == 5:
-                print("let us search product")
+                search_value = input("Enter product name")
+                sql ="select id, name, price, quantity from product where name like %s and is_deleted=0 order by name"
+                values = [f'%{search_value}%']
+                products = c.fetchData(sql,values)
+                #print(products) #list of dictionary 
+                print(f"{'id':<5} {'':<5} {'name':<70} {'price':10} {'quantity':10}")
+                print("-"*100)
+                if len(products)==0:
+                    print("No Product found")
+                else:
+                    for row in products:
+                        print(f"{row['id']:5} {'':5} {row['name']:<64} {row['price']:10} {row['quantity']:10}")
+                key = input("Press any key to continue")
             elif product_choice == 0:
                 print("let us exit to main menu")
                 break
