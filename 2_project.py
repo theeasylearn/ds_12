@@ -64,7 +64,28 @@ while True:
                     print("Product added successfully")
                     key = input("Press any key to continue")
             elif product_choice == 2:
-                print("let us edit product")
+                # display all products
+                display_product()
+                # accept id of product to be updated 
+                id = int(input("enter product id to update product"))
+                # check whether id exists or not 
+                sql = "select id from product where id = %s"
+                values = [id]
+                products = c.fetchData(sql,values) #list of dictionary
+                if len(products)==0:
+                    print("No product found")
+                else:
+                    # if id found, accept name, price, quantity from user 
+                    name = input("Enter Product Name")
+                    price = int(input("Enter product price"))
+                    quantity = int(input("Enter product quantity"))
+                    # run update sql statement
+                    sql = "update product set name=%s,price=%s,quantity=%s where id=%s"
+                    values = [name,price,quantity,id]
+                    success = c.runSQL(sql,values)
+                    if success == 1:
+                        print("product updated successfully")
+                key = input("Press any key to continue")
             elif product_choice == 3:
                 print("let us delete product")
                 #display all products 

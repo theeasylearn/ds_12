@@ -6,9 +6,11 @@
 6) put product choice menu into loop 
 7) Develop Reports choice menu 
 8) put report choice menu into loop 
-9) save as 1_project.py file as project2.py file and now onwards write code into 2_project.py 
+9) save as 1_project.py file as 2_project.py file and now onwards write code into 2_project.py 
 10) work upon product management module 
 11) work upon add product option 
 12) work upon view all products option 
-
+13) work upon delete product 
+14) work upon update product 
+15) save as 2_project.py file as 3_product.py file and write code into it 
 
