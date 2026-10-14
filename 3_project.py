@@ -22,7 +22,7 @@ while True:
         for row in products:
             temp = {row['id']:row['price']}
             product_list.append(temp)
-        #print(product_list)
+        # print(product_list)
         while True:
             print("-"*100)
             print("Bill Management")
@@ -40,13 +40,26 @@ while True:
                 #accept productid 
                 id = int(input("Enter product id "))
                 #check productid is valid or invalid
-                
-                #if valid productid then we accept quantity from users
-                #run sql statement to insert row into bill item table 
+                if not any(id in product_id for product_id in product_list):
+                    print("Product not found")    
+                else:
+                    #if valid productid then we accept quantity from users
+                    quantity = int(input("Enter purchase count(no of pcs)"))
+                    #run sql statement to insert row into bill item table 
+                    sql = "insert into bill_item (productid,quantity,price,billid) values (%s,%s,%s,%s)"
+                    price = next((item[id] for item in product_list if id in item), None)
+                    values = [id,quantity,price,0]
+                    success = c.runSQL(sql,values)
+                    if success == 1:
+                        print("Item added into bill")
+                key = input("Press any key to continue")
             elif bill_choice == 2:
                 print("let us delete items from bill")
             elif bill_choice == 3:
-                print("let us print all bill items")
+                sql = "select productid,i.price,i.quantity,name from bill_item i,product p where productid=p.id and billid=0  order by i.id desc"
+                table = c.fetchData(sql)
+                for row in table:
+                    print(row)
             elif bill_choice == 4:
                 print('let us generate bill')
             elif bill_choice == 5:
