@@ -8,6 +8,22 @@ def display_product():
         print(f"{row['id']:5} {'':5} {row['name']:<64} {row['price']:10} {row['quantity']:10}")
         if (index+1)%10 == 0:
             key = input("Press any key to continue")
+def display_bill_items():
+    sql = "select i.id as id, productid,i.price,i.quantity,name from bill_item i,product p where productid=p.id and billid=0  order by i.id desc"
+    table = c.fetchData(sql)
+    print(f"{'itemID':<8}{'id':4} {'name':<62} {'price':<10} {'quantity':<10} {'total' :<10}")
+    print("-"*110)
+    bill_total = 0
+    item_count = 0
+    for row in table:
+        print(f"{row['id']:8} {row['productid']:4} {row['name']:<62} {row['price']:<10} {row['quantity']:<10} {row['price'] * row['quantity'] :<10}")
+        item_count = item_count + row['quantity']
+        bill_total = bill_total + (row['price'] * row['quantity'])
+
+    print("-"*110)
+    print(f"Total Item = {item_count} Total Bill Amount = {bill_total}")
+    print("-"*110)
+    key = input("Press any to continue")
 while True: 
     print("Press 1 for Bill Management")
     print("Press 2 for Product Management")
@@ -54,14 +70,34 @@ while True:
                         print("Item added into bill")
                 key = input("Press any key to continue")
             elif bill_choice == 2:
-                print("let us delete items from bill")
+                #display all items in bill 
+                display_bill_items()
+                #accept item id from user 
+                item_id = int(input("Enter Item id"))
+                # check item id exists or not 
+                sql = "select productid from bill_item where id=%s"
+                values = [item_id]
+                bill_item = c.fetchData(sql,values)
+                if len(bill_item)==0:
+                    print("ITEM ID not found in bill")
+                else:
+                    # if item id found then we run delete sql statement    
+                    sql = "delete from bill_item where id=%s"
+                    values = [item_id]
+                    success = c.runSQL(sql,values)
+                    if success == 1:
+                        print("item has been deleted from bill")
+                key = input("Press any key to continue")
+
             elif bill_choice == 3:
-                sql = "select productid,i.price,i.quantity,name from bill_item i,product p where productid=p.id and billid=0  order by i.id desc"
-                table = c.fetchData(sql)
-                for row in table:
-                    print(row)
+                display_bill_items()
             elif bill_choice == 4:
-                print('let us generate bill')
+                # calculate bill amount
+                # accept bill detail such name,mobile,email from user 
+                # insert new row into bill table 
+                # update bill_item set billid using last inserted row of bill table 
+                # reduce stock of each and every item
+                print('')
             elif bill_choice == 5:
                 print("let us search for bills")
             elif bill_choice == 0:

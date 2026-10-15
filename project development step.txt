@@ -13,4 +13,8 @@
 13) work upon delete product 
 14) work upon update product 
 15) save as 2_project.py file as 3_product.py file and write code into it 
+16) insert bill item 
+17) view bill items 
+18) delete bill items 
+19) generate bill 
 
