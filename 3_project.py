@@ -11,18 +11,21 @@ def display_product():
 def display_bill_items():
     sql = "select i.id as id, productid,i.price,i.quantity,name from bill_item i,product p where productid=p.id and billid=0  order by i.id desc"
     table = c.fetchData(sql)
-    print(f"{'itemID':<8}{'id':4} {'name':<62} {'price':<10} {'quantity':<10} {'total' :<10}")
-    print("-"*110)
-    bill_total = 0
-    item_count = 0
-    for row in table:
-        print(f"{row['id']:8} {row['productid']:4} {row['name']:<62} {row['price']:<10} {row['quantity']:<10} {row['price'] * row['quantity'] :<10}")
-        item_count = item_count + row['quantity']
-        bill_total = bill_total + (row['price'] * row['quantity'])
-
-    print("-"*110)
-    print(f"Total Item = {item_count} Total Bill Amount = {bill_total}")
-    print("-"*110)
+    if len(table)==0:
+        print("There is no item in bill")
+    else:
+        print(f"{'itemID':<8}{'id':4} {'name':<62} {'price':<10} {'quantity':<10} {'total' :<10}")
+        print("-"*110)
+        bill_total = 0
+        item_count = 0
+        for row in table:
+            print(f"{row['id']:8} {row['productid']:4} {row['name']:<62} {row['price']:<10} {row['quantity']:<10} {row['price'] * row['quantity'] :<10}")
+            item_count = item_count + row['quantity']
+            bill_total = bill_total + (row['price'] * row['quantity'])
+    
+        print("-"*110)
+        print(f"Total Item = {item_count} Total Bill Amount = {bill_total}")
+        print("-"*110)
     key = input("Press any to continue")
 while True: 
     print("Press 1 for Bill Management")
@@ -93,10 +96,54 @@ while True:
                 display_bill_items()
             elif bill_choice == 4:
                 # calculate bill amount
-                # accept bill detail such name,mobile,email from user 
-                # insert new row into bill table 
-                # update bill_item set billid using last inserted row of bill table 
-                # reduce stock of each and every item
+                sql = "SELECT sum(price*quantity) as 'amount' FROM `bill_item` where billid=0"
+                bill_item = c.fetchData(sql)
+                if len(bill_item)==0:
+                    print("No item found in bill")
+                else:
+                    #display bill amount
+                    amount = bill_item[0]['amount']
+                    print(f"total bill amount = {amount}")
+                    response = input("Are you sure to print bill (1 = yes/0 = no)")
+                    if response=="1":
+
+                        # accept bill detail such name,mobile,email from user 
+                        name = input("Enter Customer Name")
+                        mobile = input("Enter mobile no ")
+                        email = input("Enter email address")
+
+                        # insert new row into bill table 
+                        sql = "insert into bill (name,mobile,email,amount) values (%s,%s,%s,%s)"
+                        values = [name,mobile,email,amount]
+                        success = c.runSQL(sql,values)
+                        if success == 1:
+                            print("Bill has been generated....")
+                            #generate last bill id
+                            
+                            sql = "select max(id) as last_bill_id from bill"
+                            bill = c.fetchData(sql)
+                            bill_id = bill[0]['last_bill_id']
+                            
+                            # update bill_item set billid using last inserted row of bill table 
+                            sql = "update bill_item set billid=%s where billid=0"
+                            values = [bill_id]
+                            success = c.runSQL(sql,values)
+                              
+                            #fetch productid and quantity of purchased items
+                            sql = "select productid,quantity from bill_item where billid=%s"
+                            values = [bill_id]
+                            bill_item = c.fetchData(sql,values)
+                            for row in bill_item:
+                                productid = row['productid']
+                                quantity = row['quantity']
+                                sql = "update product set quantity=quantity - %s where id=%s"
+                                values = [quantity,productid]
+                                success = c.runSQL(sql,values)
+                                if success==1:
+                                   print("Bill has been successfully processed...")  
+                            key = input("Press any key to continue")
+                            # reduce stock of each and every item
+
                 print('')
             elif bill_choice == 5:
                 print("let us search for bills")
