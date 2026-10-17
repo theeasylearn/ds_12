@@ -1,3 +1,5 @@
+from datetime import datetime,timedelta
+
 import connection as c 
 def display_product():
     sql = "select id,name,price,quantity from product where is_deleted=0 order by name"
@@ -146,7 +148,29 @@ while True:
 
                 print('')
             elif bill_choice == 5:
-                print("let us search for bills")
+                search_value = input("Enter customer name or bill date (%d-%m-%Y)")
+                date = 0
+                next_date = 0
+                sql = ''
+                try:
+                    date = datetime.strptime(search_value, "%d-%m-%Y")
+                    next_date = date + timedelta(days=1)
+                    sql = "SELECT id,name,mobile,email,amount,date_format(created_at,'%d-%m-%Y') as bill_date FROM bill where created_at>=%s and created_at<%s"
+                    values = [date,next_date]
+                except ValueError as e:
+                    print("invalid date")
+                    sql = "SELECT id,name,mobile,email,amount,date_format(created_at,'%d-%m-%Y') as bill_date FROM bill where name like %s"
+                    values = [f'%{search_value}%']
+                print(sql)
+                bill = c.fetchData(sql,values)
+                if len(bill) == 0:
+                    print("No bill found")
+                else:
+                    print(f"{'id':5} {'name':32} {'email':32} {'mobile':12} {'amount':10} {'bill_date':16}")
+                    print("-"*100)
+                    for row in bill:
+                        print(f"{row['id']:5} {row['name']:32} {row['email']:32} {row['mobile']:12} {row['amount']:10} {row['bill_date']:16}")
+                    key = input("Press any key to continue")
             elif bill_choice == 0:
                 print("let us return to main manu")
                 break
