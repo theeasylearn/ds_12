@@ -6,10 +6,15 @@ def display_product():
     products = c.fetchData(sql)
     print(f"{'id':<5} {'':<5} {'name':<70} {'price':10} {'quantity':10}")
     print("-"*100)
+    GrandTotal = 0
     for index,row in enumerate(products):
+        GrandTotal = GrandTotal + (row['price'] * row['quantity'])
         print(f"{row['id']:5} {'':5} {row['name']:<64} {row['price']:10} {row['quantity']:10}")
         if (index+1)%10 == 0:
             key = input("Press any key to continue")
+    print("-"*110)
+    print(f"Grand total = {GrandTotal}")
+    
 def display_bill_items():
     sql = "select i.id as id, productid,i.price,i.quantity,name from bill_item i,product p where productid=p.id and billid=0  order by i.id desc"
     table = c.fetchData(sql)
@@ -253,7 +258,49 @@ while True:
             else:
                 print("not a valid choice ")
     elif choice == 3:
-        print("let us develop reports")
+        while True:
+            print("Press 1 for sales report between given dates")
+            print("Press 2 for product stock reports ")
+            print("Press 0 to return to main menu")
+            choice = int(input("Enter your choice"))
+            if choice == 1:
+                shouldContinue = True
+                while shouldContinue==True:
+                    try:
+                        start_date = input("Enter report start dates ")
+                        end_date = input("Enter report end date")
+                        start_date = datetime.strptime(start_date, "%d-%m-%Y")
+                        end_date = datetime.strptime(end_date, "%d-%m-%Y")
+                        sql = "SELECT id,name,mobile,email,amount,date_format(created_at,'%d-%m-%Y') as bill_date FROM bill where created_at>=%s and created_at<=%s"
+                        values = [start_date,end_date]
+                        bill = c.fetchData(sql,values)
+                        if len(bill) == 0:
+                            print("No bill found")
+                        else:
+                            print(f"{'id':5} {'name':32} {'email':32} {'mobile':12} {'amount':8} {'bill_date':16}")
+                            print("-"*100)
+                            GrantTotal = 0
+                            count = 0
+                            for row in bill:
+                                print(f"{row['id']:5} {row['name']:32} {row['email']:32} {row['mobile']:12} {row['amount']:8} {row['bill_date']:16}")
+                                GrantTotal = GrantTotal + row['amount']
+                                count = count + 1
+                            print("-"*110)
+                            print(f"Total Bill = {count} Grand Total = {GrantTotal}")
+                            print("-"*110)
+                            key = input("Press any key to continue")
+                        shouldContinue = False 
+                    except ValueError as e:
+                        print("invalid date")
+
+            elif choice == 2:
+               display_product()
+            elif choice == 0:
+                print("Return to main menu")
+                break
+            else:
+                print("invalid choice")
+        
     elif choice == 0:
         print("thank you for using our software, good bye")
         break #loop stop 
