@@ -1,4 +1,4 @@
-import connection as c #c is alias (nick name)
+import project.connection as c #c is alias (nick name)
 mycursor = c.database.cursor()
 sql = "insert into users (name,age,weight) values (%s,%s,%s)"
 name = input("What is your name")

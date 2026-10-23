@@ -1,4 +1,4 @@
-import connection as c 
+import project.connection as c 
 while True: 
     print("Press 1 for Bill Management")
     print("Press 2 for Product Management")

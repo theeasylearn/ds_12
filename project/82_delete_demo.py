@@ -1,4 +1,4 @@
-import connection as c #c is alias (nickname)
+import project.connection as c #c is alias (nickname)
 #create cursor 
 mycursor = c.database.cursor()
 

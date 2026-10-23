@@ -1,4 +1,4 @@
-import connection as c 
+import project.connection as c 
 def display_product():
     sql = "select id,name,price,quantity from product where is_deleted=0 order by name"
     products = c.fetchData(sql)

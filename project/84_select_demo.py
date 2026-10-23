@@ -1,4 +1,4 @@
-import connection as c 
+import project.connection as c 
 
 #create cursor 
 mycursor = c.database.cursor(dictionary=True)
