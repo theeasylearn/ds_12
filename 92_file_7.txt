@@ -1,0 +1,4 @@
+filename = input("Enter file name to delete ")
+import os 
+os.remove(filename)
+print("file has been deleted")
