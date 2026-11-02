@@ -1,5 +1,5 @@
 mode = "r"
-while True:
+while True: 
     try:
         filename = input("Enter file name")
         #file open 
