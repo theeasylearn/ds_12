@@ -333,3 +333,11 @@ Create class Dragon which has below method it should extends both Animal and bir
         fly()
         sing()
     
+Exception Handling. 
+--------------------------------------------------------
+write a program to accept numbers from user. if number is odd write it into odd.txt file and if number is even write it into even.txt file. continue to do this until user give 0. then display all the numbers from both files. use exception handling mechanism 
+
+
+write a program to findout who is elder person between husband and wife. accept birth date of both. use exception handling mechanism to handle invalid date. 
+
+
