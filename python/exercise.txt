@@ -341,3 +341,5 @@ write a program to accept numbers from user. if number is odd write it into odd.
 write a program to findout who is elder person between husband and wife. accept birth date of both. use exception handling mechanism to handle invalid date. 
 
 
+write a program for banking application that allows user to withdraw amount from ATM. assume user has 50000 amount in his account. user should not able to withdraw > 25000 rupees at time and he should not be able to withdraw more then amount in his account. reduce balance after each withdrawal. custom exception and built in exception 
+
